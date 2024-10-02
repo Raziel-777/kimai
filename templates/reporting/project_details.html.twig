@@ -315,6 +315,9 @@
                 {% if activities is not empty %}
                     <li class="nav-item"><a class="nav-link" data-chart="{{ chartPrefix }}Activity" href="#activity-chart" data-bs-toggle="tab">{{ 'activity'|trans }}</a></li>
                 {% endif %}
+                {% if project %}
+                    <li class="nav-item"><a class="nav-link" href="{{ path('export_project_data', { 'project_name': project.name }) }}">Récupération des données</a></li>
+                {% endif %}
             </ul>
             <div class="card-actions">
                 {{ widgets.badge_counter(project_view.durationTotal|duration) }}
